@@ -10,6 +10,8 @@ local label = Instance.new("TextLabel")
 local Btools = Instance.new("TextButton")
 local script2 = Instance.new("TextButton")
 local gamez = Instance.new("TextButton")
+local fly = Instance.new("TextButton")
+local cmdx = Instance.new("TextButton")
 local guiframe = Instance.new("Frame")
 local labelgui = Instance.new("TextLabel")
 local pfbutton = Instance.new("TextButton")
@@ -175,6 +177,36 @@ gamez.TextWrapped = true
 gamez.MouseButton1Down:connect(function()
 	main.Visible = false
 	guiframe.Visible = true
+end)
+
+fly.Name = "CLICK V TO FLY"
+fly.Parent = main
+fly.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+fly.Position = UDim2.new(0.0316804647, 0, 0.399999976, 0)
+fly.Size = UDim2.new(0, 200, 0, 50)
+fly.Font = Enum.Font.SourceSans
+fly.Text = "FLY"
+fly.TextColor3 = Color3.fromRGB(0, 0, 0)
+fly.TextScaled = true
+fly.TextSize = 14.000
+fly.TextWrapped = true
+Btools.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/FirezRage/flys/main/README.md", true))()
+end)
+
+cmdx.Name = "cmdx"
+cmdx.Parent = main
+cmdx.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+cmdx.Position = UDim2.new(0.0316804424, 0, 0.633910358, 0)
+cmdx.Size = UDim2.new(0, 428, 0, 32)
+cmdx.Font = Enum.Font.SourceSans
+cmdx.Text = "CMD X"
+cmdx.TextColor3 = Color3.fromRGB(0, 0, 0)
+cmdx.TextScaled = true
+cmdx.TextSize = 14.000
+cmdx.TextWrapped = true
+Btools.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
 end)
 
 guiframe.Name = "guiframe"
