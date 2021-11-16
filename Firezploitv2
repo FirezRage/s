@@ -1,0 +1,56 @@
+LoginFrame.Name = "LoginFrame"
+LoginFrame.Parent = ScreenGui
+LoginFrame.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+LoginFrame.Position = UDim2.new(0.109895863, 0, 0.224074081, 0)
+LoginFrame.Size = UDim2.new(0, 309, 0, 433)
+
+LoginFrame.Draggable = true
+
+LoginTitle.Name = "Login Title"
+LoginTitle.Parent = LoginFrame
+LoginTitle.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+LoginTitle.Size = UDim2.new(0, 309, 0, 50)
+LoginTitle.Font = Enum.Font.SourceSans
+LoginTitle.Text = "LOGIN"
+LoginTitle.TextColor3 = Color3.fromRGB(213, 213, 213)
+LoginTitle.TextScaled = true
+LoginTitle.TextSize = 14.000
+LoginTitle.TextWrapped = true
+
+username.Name = "username"
+username.Parent = LoginFrame
+username.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+username.Position = UDim2.new(0.127721205, 0, 0.267898381, 0)
+username.Size = UDim2.new(0, 229, 0, 50)
+username.Font = Enum.Font.SourceSans
+username.Text = "USERNAME"
+username.TextColor3 = Color3.fromRGB(213, 213, 213)
+username.TextScaled = true
+username.TextSize = 14.000
+username.TextWrapped = true
+
+password.Name = "password"
+password.Parent = LoginFrame
+password.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+password.Position = UDim2.new(0.127721205, 0, 0.487297922, 0)
+password.Size = UDim2.new(0, 230, 0, 50)
+password.Font = Enum.Font.SourceSans
+password.Text = "PASSWORD"
+password.TextColor3 = Color3.fromRGB(213, 213, 213)
+password.TextScaled = true
+password.TextSize = 14.000
+password.TextWrapped = true
+
+Login.Name = "Login"
+Login.Parent = LoginFrame
+Login.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+Login.Position = UDim2.new(0.174757287, 0, 0.775981545, 0)
+Login.Size = UDim2.new(0, 200, 0, 50)
+Login.Font = Enum.Font.SourceSans
+Login.Text = "LOGIN "
+Login.TextColor3 = Color3.fromRGB(213, 213, 213)
+Login.TextScaled = true
+Login.TextSize = 14.000
+Login.TextWrapped = true
+Login.MouseButton1Down:connect(function()
+	if username.Text == "Em_illys" and password.Text == "v1ishere" then 
