@@ -18,7 +18,10 @@ local pfbutton = Instance.new("TextButton")
 local proxl = Instance.new("TextButton")
 local prisongui = Instance.new("TextButton")
 local jailbreakgui = Instance.new("TextButton")
+local tnfgui = Instance.new("TextButton")
 local goback = Instance.new("TextButton")
+
+
 
 
 ScreenGui.Parent = game.CoreGui
@@ -28,7 +31,7 @@ LoginFrame.Parent = ScreenGui
 LoginFrame.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
 LoginFrame.Position = UDim2.new(0.109895863, 0, 0.224074081, 0)
 LoginFrame.Size = UDim2.new(0, 309, 0, 433)
-LoginFrame.Active = true
+
 LoginFrame.Draggable = true
 
 LoginTitle.Name = "Login Title"
@@ -179,7 +182,7 @@ gamez.MouseButton1Down:connect(function()
 	guiframe.Visible = true
 end)
 
-fly.Name = "CLICK V TO FLY"
+fly.Name = "fly"
 fly.Parent = main
 fly.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
 fly.Position = UDim2.new(0.0316804647, 0, 0.399999976, 0)
@@ -213,7 +216,7 @@ guiframe.Name = "guiframe"
 guiframe.Parent = ScreenGui
 guiframe.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
 guiframe.Position = UDim2.new(0, 633, 0, 628)
-guiframe.Size = UDim2.new(0, 301, 0, 388)
+guiframe.Size = UDim2.new(0, 301, 0, 646)
 guiframe.Visible = false
 guiframe.Active = true
 guiframe.Draggable = true
@@ -286,13 +289,29 @@ jailbreakgui.TextScaled = true
 jailbreakgui.TextSize = 14.000
 jailbreakgui.TextWrapped = true
 jailbreakgui.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/opBandwidth/Magma-Core/main/Jailbreak/Main.lua"))()
+	loadstring(game:HttpGet(("https://raw.githubusercontent.com/opBandwidth/Magma-Core/main/Jailbreak/Main.lua"), true))()
 end)
+tnfgui.Name = "tnfgui"
+tnfgui.Parent = guiframe
+tnfgui.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+tnfgui.Position = UDim2.new(0, 50, 0, 365)
+tnfgui.Size = UDim2.new(0, 200, 0, 50)
+tnfgui.Font = Enum.Font.SourceSans
+tnfgui.Text = "TNF GUI"
+tnfgui.TextColor3 = Color3.fromRGB(0, 0, 0)
+tnfgui.TextScaled = true
+tnfgui.TextSize = 14.000
+tnfgui.TextWrapped = true
+tnfgui.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/FirezRage/tnfgui/main/tnfgui?token=AVFFU4HSUXIOMI3NNO77YNDBSMTTY", true))()
+end)
+
+
 
 goback.Name = "goback"
 goback.Parent = guiframe
 goback.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-goback.Position = UDim2.new(0, 0, 0, 362)
+goback.Position = UDim2.new(0, 0, 0, 612)
 goback.Size = UDim2.new(0, 301, 0, 26)
 goback.Font = Enum.Font.SourceSans
 goback.Text = "GO BACK"
@@ -304,3 +323,5 @@ goback.MouseButton1Down:connect(function()
 	guiframe.Visible = false
 	main.Visible = true
 end)
+
+
