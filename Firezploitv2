@@ -1,3 +1,31 @@
+
+local ScreenGui = Instance.new("ScreenGui")
+local LoginFrame = Instance.new("Frame")
+local LoginTitle = Instance.new("TextLabel")
+local username = Instance.new("TextBox")
+local password = Instance.new("TextBox")
+local Login = Instance.new("TextButton")
+local main = Instance.new("Frame")
+local label = Instance.new("TextLabel")
+local Btools = Instance.new("TextButton")
+local script2 = Instance.new("TextButton")
+local gamez = Instance.new("TextButton")
+local fly = Instance.new("TextButton")
+local cmdx = Instance.new("TextButton")
+local guiframe = Instance.new("Frame")
+local labelgui = Instance.new("TextLabel")
+local pfbutton = Instance.new("TextButton")
+local proxl = Instance.new("TextButton")
+local prisongui = Instance.new("TextButton")
+local jailbreakgui = Instance.new("TextButton")
+local tnfgui = Instance.new("TextButton")
+local goback = Instance.new("TextButton")
+
+
+
+
+ScreenGui.Parent = game.CoreGui
+
 LoginFrame.Name = "LoginFrame"
 LoginFrame.Parent = ScreenGui
 LoginFrame.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
@@ -54,3 +82,384 @@ Login.TextSize = 14.000
 Login.TextWrapped = true
 Login.MouseButton1Down:connect(function()
 	if username.Text == "Em_illys" and password.Text == "v1ishere" then 
+		LoginFrame.Visible = false
+		main.Visible = true
+		guiframe.Visible = false
+	end
+end)
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+main.Position = UDim2.new(0.330208302, 0, 0.224074081, 0)
+main.Size = UDim2.new(0, 726, 0, 360)
+main.Visible = false
+main.Active = true
+main.Draggable = true
+
+label.Name = "label"
+label.Parent = main
+label.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+label.Size = UDim2.new(0, 726, 0, 50)
+label.Font = Enum.Font.SourceSans
+label.Text = "Flare Admin v1 | made by Em_illys"
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextScaled = true
+label.TextSize = 14.000
+label.TextWrapped = true
+
+Btools.Name = "Btools"
+Btools.Parent = main
+Btools.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+Btools.Position = UDim2.new(0.0330578499, 0, 0.213888884, 0)
+Btools.Size = UDim2.new(0, 200, 0, 50)
+Btools.Font = Enum.Font.SourceSans
+Btools.Text = "BTOOLS"
+Btools.TextColor3 = Color3.fromRGB(0, 0, 0)
+Btools.TextScaled = true
+Btools.TextSize = 14.000
+Btools.TextWrapped = true
+Btools.MouseButton1Down:connect(function()
+	local tool1 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool2 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool3 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool4 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool5 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	tool1.BinType = "Clone"
+	tool2.BinType = "GameTool"
+	tool3.BinType = "Hammer"
+	tool4.BinType = "Script"
+	tool5.BinType = "Grab"
+end)
+
+script2.Name = "script2"
+script2.Parent = main
+script2.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+script2.Position = UDim2.new(0.345730066, 0, 0.213888884, 0)
+script2.Size = UDim2.new(0, 200, 0, 50)
+script2.Font = Enum.Font.SourceSans
+script2.Text = "CLICK T TO TP"
+script2.TextColor3 = Color3.fromRGB(0, 0, 0)
+script2.TextScaled = true
+script2.TextSize = 14.000
+script2.TextWrapped = true
+script2.MouseButton1Down:connect(function()
+	plr = game.Players.LocalPlayer
+
+	hum = plr.Character.HumanoidRootPart
+
+	mouse = plr:GetMouse()
+
+
+
+	mouse.KeyDown:connect(function(key)
+
+		if key == "t" then
+
+			if mouse.Target then
+
+				hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+
+			end
+
+		end
+	end)
+end)
+
+gamez.Name = "gamez"
+gamez.Parent = main
+gamez.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+gamez.Position = UDim2.new(0.0275482927, 0, 0.758333325, 0)
+gamez.Size = UDim2.new(0, 681, 0, 50)
+gamez.Font = Enum.Font.SourceSans
+gamez.Text = "Game Script GUI"
+gamez.TextColor3 = Color3.fromRGB(0, 0, 0)
+gamez.TextScaled = true
+gamez.TextSize = 14.000
+gamez.TextWrapped = true
+gamez.MouseButton1Down:connect(function()
+	main.Visible = false
+	guiframe.Visible = true
+end)
+
+fly.Name = "fly"
+fly.Parent = main
+fly.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+fly.Position = UDim2.new(0.0316804647, 0, 0.399999976, 0)
+fly.Size = UDim2.new(0, 200, 0, 50)
+fly.Font = Enum.Font.SourceSans
+fly.Text = "FLY"
+fly.TextColor3 = Color3.fromRGB(0, 0, 0)
+fly.TextScaled = true
+fly.TextSize = 14.000
+fly.TextWrapped = true
+Btools.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/FirezRage/flys/main/README.md", true))()
+end)
+
+cmdx.Name = "cmdx"
+cmdx.Parent = main
+cmdx.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+cmdx.Position = UDim2.new(0.0316804424, 0, 0.633910358, 0)
+cmdx.Size = UDim2.new(0, 428, 0, 32)
+cmdx.Font = Enum.Font.SourceSans
+cmdx.Text = "CMD X"
+cmdx.TextColor3 = Color3.fromRGB(0, 0, 0)
+cmdx.TextScaled = true
+cmdx.TextSize = 14.000
+cmdx.TextWrapped = true
+Btools.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+
+guiframe.Name = "guiframe"
+guiframe.Parent = ScreenGui
+guiframe.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+guiframe.Position = UDim2.new(0, 633, 0, 628)
+guiframe.Size = UDim2.new(0, 301, 0, 646)
+guiframe.Visible = false
+guiframe.Active = true
+guiframe.Draggable = true
+
+labelgui.Name = "labelgui"
+labelgui.Parent = guiframe
+labelgui.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+labelgui.Size = UDim2.new(0, 301, 0, 50)
+labelgui.Font = Enum.Font.SourceSans
+labelgui.Text = "GUIS"
+labelgui.TextColor3 = Color3.fromRGB(213, 213, 213)
+labelgui.TextScaled = true
+labelgui.TextSize = 14.000
+labelgui.TextWrapped = true
+
+pfbutton.Name = "pfbutton"
+pfbutton.Parent = guiframe
+pfbutton.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+pfbutton.Position = UDim2.new(0, 50, 0, 66)
+pfbutton.Size = UDim2.new(0, 200, 0, 50)
+pfbutton.Font = Enum.Font.SourceSans
+pfbutton.Text = "Phantom Forces"
+pfbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+pfbutton.TextScaled = true
+pfbutton.TextSize = 14.000
+pfbutton.TextWrapped = true
+pfbutton.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://bruh.keshsenpai.com/.lua"))()
+end)
+
+proxl.Name = "proxl"
+proxl.Parent = guiframe
+proxl.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+proxl.Position = UDim2.new(0, 50, 0, 140)
+proxl.Size = UDim2.new(0, 200, 0, 50)
+proxl.Font = Enum.Font.SourceSans
+proxl.Text = "Project XL"
+proxl.TextColor3 = Color3.fromRGB(0, 0, 0)
+proxl.TextScaled = true
+proxl.TextSize = 14.000
+proxl.TextWrapped = true
+proxl.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/10540475/legogamestuff/main/projectxl'))()
+end)
+
+prisongui.Name = "prisongui"
+prisongui.Parent = guiframe
+prisongui.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+prisongui.Position = UDim2.new(0, 50, 0, 215)
+prisongui.Size = UDim2.new(0, 200, 0, 50)
+prisongui.Font = Enum.Font.SourceSans
+prisongui.Text = "Prison Life"
+prisongui.TextColor3 = Color3.fromRGB(0, 0, 0)
+prisongui.TextScaled = true
+prisongui.TextSize = 14.000
+prisongui.TextWrapped = true
+prisongui.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(("https://raw.githubusercontent.com/i1nfinity/Project-X/master/Prison%20Breaker%20X"), true))()
+end)
+
+jailbreakgui.Name = "jailbreakgui"
+jailbreakgui.Parent = guiframe
+jailbreakgui.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+jailbreakgui.Position = UDim2.new(0, 50, 0, 290)
+jailbreakgui.Size = UDim2.new(0, 200, 0, 50)
+jailbreakgui.Font = Enum.Font.SourceSans
+jailbreakgui.Text = "Jail Break"
+jailbreakgui.TextColor3 = Color3.fromRGB(0, 0, 0)
+jailbreakgui.TextScaled = true
+jailbreakgui.TextSize = 14.000
+jailbreakgui.TextWrapped = true
+jailbreakgui.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(("https://raw.githubusercontent.com/opBandwidth/Magma-Core/main/Jailbreak/Main.lua"), true))()
+end)
+tnfgui.Name = "tnfgui"
+tnfgui.Parent = guiframe
+tnfgui.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+tnfgui.Position = UDim2.new(0, 50, 0, 365)
+tnfgui.Size = UDim2.new(0, 200, 0, 50)
+tnfgui.Font = Enum.Font.SourceSans
+tnfgui.Text = "TNF GUI"
+tnfgui.TextColor3 = Color3.fromRGB(0, 0, 0)
+tnfgui.TextScaled = true
+tnfgui.TextSize = 14.000
+tnfgui.TextWrapped = true
+tnfgui.MouseButton1Down:connect(function()
+
+
+	local ssgui = Instance.new("ScreenGui")
+	local tnfmain = Instance.new("Frame")
+	local maintitle = Instance.new("TextLabel")
+	local sa = Instance.new("TextButton")
+	local Godmode = Instance.new("TextButton")
+
+
+
+
+	ssgui.Parent = game.CoreGui
+
+	tnfmain.Name = "tnfmain"
+	tnfmain.Parent = ssgui
+	tnfmain.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+	tnfmain.Position = UDim2.new(0.65625006, 0, 0.309259266, 0)
+	tnfmain.Size = UDim2.new(0, 309, 0, 433)
+	tnfmain.Visible = true
+	tnfmain.Active = true
+	tnfmain.Draggable = true
+
+
+	maintitle.Name = "maintitle"
+	maintitle.Parent = tnfmain
+	maintitle.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+	maintitle.Size = UDim2.new(0, 309, 0, 50)
+	maintitle.Font = Enum.Font.SourceSans
+	maintitle.Text = "TNF HACK"
+	maintitle.TextColor3 = Color3.fromRGB(213, 213, 213)
+	maintitle.TextScaled = true
+	maintitle.TextSize = 14.000
+	maintitle.TextWrapped = true
+
+	sa.Name = "sa"
+	sa.Parent = tnfmain
+	sa.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+	sa.Position = UDim2.new(0, 54, 0, 82)
+	sa.Size = UDim2.new(0, 200, 0, 50)
+	sa.Font = Enum.Font.SourceSans
+	sa.Text = "Silent Aim"
+	sa.TextColor3 = Color3.fromRGB(0, 0, 0)
+	sa.TextScaled = true
+	sa.TextSize = 14.000
+	sa.TextWrapped = true
+	sa.MouseButton1Down:connect(function()
+		local CurrentCamera = workspace.CurrentCamera
+		local Players = game.GetService(game, "Players")
+		local LocalPlayer = Players.LocalPlayer
+		local Mouse = LocalPlayer:GetMouse()
+		function ClosestPlayer()
+			local MaxDist, Closest = math.huge
+			for I,V in pairs(Players.GetPlayers(Players)) do
+				if V == LocalPlayer then continue end
+				if V.Team == LocalPlayer then continue end
+				if not V.Character then continue end
+				local Head = V.Character.FindFirstChild(V.Character, "Head")
+				if not Head then continue end
+				local Pos, Vis = CurrentCamera.WorldToScreenPoint(CurrentCamera, Head.Position)
+				if not Vis then continue end
+				local MousePos, TheirPos = Vector2.new(Mouse.X, Mouse.Y), Vector2.new(Pos.X, Pos.Y)
+				local Dist = (TheirPos - MousePos).Magnitude
+				if Dist < MaxDist then
+					MaxDist = Dist
+					Closest = V
+				end
+			end
+			return Closest
+		end
+		local MT = getrawmetatable(game)
+		local OldNC = MT.__namecall
+		local OldIDX = MT.__index
+		setreadonly(MT, false)
+		MT.__namecall = newcclosure(function(self, ...)
+			local Args, Method = {...}, getnamecallmethod()
+			if Method == "FindPartOnRayWithIgnoreList" and not checkcaller() then
+				local CP = ClosestPlayer()
+				if CP and CP.Character and CP.Character.FindFirstChild(CP.Character, "Head") then
+					Args[1] = Ray.new(CurrentCamera.CFrame.Position, (CP.Character.Head.Position - CurrentCamera.CFrame.Position).Unit * 1000)
+					return OldNC(self, unpack(Args))
+				end
+			end
+			return OldNC(self, ...)
+		end)
+		MT.__index = newcclosure(function(self, K)
+			if K == "Clips" then
+				return workspace.Map
+			end
+			return OldIDX(self, K)
+		end)
+		setreadonly(MT, true)
+	end)
+
+	Godmode.Name = "Godmode"
+	Godmode.Parent = tnfmain
+	Godmode.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+	Godmode.Position = UDim2.new(0, 54, 0, 152)
+	Godmode.Size = UDim2.new(0, 200, 0, 50)
+	Godmode.Font = Enum.Font.SourceSans
+	Godmode.Text = "God Mode"
+	Godmode.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Godmode.TextScaled = true
+	Godmode.TextSize = 14.000
+	Godmode.TextWrapped = true
+	sa.MouseButton1Down:connect(function()
+		local esp_settings = { ---- table for esp settings 
+			textsize = 8,
+			colour = 255,255,255
+		}
+
+		local gui = Instance.new("BillboardGui")
+		local esp = Instance.new("TextLabel",gui) ---- new instances to make the billboard gui and the textlabel
+
+
+
+		gui.Name = "Cracked esp"; ---- properties of the esp
+		gui.ResetOnSpawn = false
+		gui.AlwaysOnTop = true;
+		gui.LightInfluence = 0;
+		gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+		esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+		esp.Text = ""
+		esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+		esp.BorderSizePixel = 4;
+		esp.BorderColor3 = Color3.new(esp_settings.colour)
+		esp.BorderSizePixel = 0
+		esp.Font = "GothamSemibold"
+		esp.TextSize = esp_settings.textsize
+		esp.TextColor3 = Color3.fromRGB(esp_settings.colour) 
+
+		game:GetService("RunService").RenderStepped:Connect(function() 
+			for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+				if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil and v.TeamColor ~= game:GetService("Players").LocalPlayer.TeamColor then -- craeting checks for team check, local player etc
+					esp.Text = "{"..v.Name.."}"
+					gui:Clone().Parent = v.Character.Head
+				end
+			end
+		end)
+	end)
+end)
+
+
+
+goback.Name = "goback"
+goback.Parent = guiframe
+goback.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+goback.Position = UDim2.new(0, 0, 0, 612)
+goback.Size = UDim2.new(0, 301, 0, 26)
+goback.Font = Enum.Font.SourceSans
+goback.Text = "GO BACK"
+goback.TextColor3 = Color3.fromRGB(213, 213, 213)
+goback.TextScaled = true
+goback.TextSize = 14.000
+goback.TextWrapped = true
+goback.MouseButton1Down:connect(function()
+	guiframe.Visible = false
+	main.Visible = true
+end)
+
+
