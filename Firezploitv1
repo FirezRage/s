@@ -303,7 +303,145 @@ tnfgui.TextScaled = true
 tnfgui.TextSize = 14.000
 tnfgui.TextWrapped = true
 tnfgui.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/FirezRage/tnfgui/main/tnfgui?token=AVFFU4HSUXIOMI3NNO77YNDBSMTTY", true))()
+	
+
+local ssgui = Instance.new("ScreenGui")
+local tnfmain = Instance.new("Frame")
+local maintitle = Instance.new("TextLabel")
+local sa = Instance.new("TextButton")
+local Godmode = Instance.new("TextButton")
+
+
+
+
+ssgui.Parent = game.CoreGui
+
+tnfmain.Name = "tnfmain"
+tnfmain.Parent = ssgui
+tnfmain.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+tnfmain.Position = UDim2.new(0.65625006, 0, 0.309259266, 0)
+tnfmain.Size = UDim2.new(0, 309, 0, 433)
+tnfmain.Visible = true
+tnfmain.Active = true
+tnfmain.Draggable = true
+
+
+maintitle.Name = "maintitle"
+maintitle.Parent = tnfmain
+maintitle.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+maintitle.Size = UDim2.new(0, 309, 0, 50)
+maintitle.Font = Enum.Font.SourceSans
+maintitle.Text = "TNF HACK"
+maintitle.TextColor3 = Color3.fromRGB(213, 213, 213)
+maintitle.TextScaled = true
+maintitle.TextSize = 14.000
+maintitle.TextWrapped = true
+
+sa.Name = "sa"
+sa.Parent = tnfmain
+sa.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+sa.Position = UDim2.new(0, 54, 0, 82)
+sa.Size = UDim2.new(0, 200, 0, 50)
+sa.Font = Enum.Font.SourceSans
+sa.Text = "Silent Aim"
+sa.TextColor3 = Color3.fromRGB(0, 0, 0)
+sa.TextScaled = true
+sa.TextSize = 14.000
+sa.TextWrapped = true
+sa.MouseButton1Down:connect(function()
+	local CurrentCamera = workspace.CurrentCamera
+	local Players = game.GetService(game, "Players")
+	local LocalPlayer = Players.LocalPlayer
+	local Mouse = LocalPlayer:GetMouse()
+	function ClosestPlayer()
+		local MaxDist, Closest = math.huge
+		for I,V in pairs(Players.GetPlayers(Players)) do
+			if V == LocalPlayer then continue end
+			if V.Team == LocalPlayer then continue end
+			if not V.Character then continue end
+			local Head = V.Character.FindFirstChild(V.Character, "Head")
+			if not Head then continue end
+			local Pos, Vis = CurrentCamera.WorldToScreenPoint(CurrentCamera, Head.Position)
+			if not Vis then continue end
+			local MousePos, TheirPos = Vector2.new(Mouse.X, Mouse.Y), Vector2.new(Pos.X, Pos.Y)
+			local Dist = (TheirPos - MousePos).Magnitude
+			if Dist < MaxDist then
+				MaxDist = Dist
+				Closest = V
+			end
+		end
+		return Closest
+	end
+	local MT = getrawmetatable(game)
+	local OldNC = MT.__namecall
+	local OldIDX = MT.__index
+	setreadonly(MT, false)
+	MT.__namecall = newcclosure(function(self, ...)
+		local Args, Method = {...}, getnamecallmethod()
+		if Method == "FindPartOnRayWithIgnoreList" and not checkcaller() then
+			local CP = ClosestPlayer()
+			if CP and CP.Character and CP.Character.FindFirstChild(CP.Character, "Head") then
+				Args[1] = Ray.new(CurrentCamera.CFrame.Position, (CP.Character.Head.Position - CurrentCamera.CFrame.Position).Unit * 1000)
+				return OldNC(self, unpack(Args))
+			end
+		end
+		return OldNC(self, ...)
+	end)
+	MT.__index = newcclosure(function(self, K)
+		if K == "Clips" then
+			return workspace.Map
+		end
+		return OldIDX(self, K)
+	end)
+	setreadonly(MT, true)
+end)
+
+Godmode.Name = "Godmode"
+Godmode.Parent = tnfmain
+Godmode.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+Godmode.Position = UDim2.new(0, 54, 0, 152)
+Godmode.Size = UDim2.new(0, 200, 0, 50)
+Godmode.Font = Enum.Font.SourceSans
+Godmode.Text = "God Mode"
+Godmode.TextColor3 = Color3.fromRGB(0, 0, 0)
+Godmode.TextScaled = true
+Godmode.TextSize = 14.000
+Godmode.TextWrapped = true
+sa.MouseButton1Down:connect(function()
+	local esp_settings = { ---- table for esp settings 
+		textsize = 8,
+		colour = 255,255,255
+	}
+
+	local gui = Instance.new("BillboardGui")
+	local esp = Instance.new("TextLabel",gui) ---- new instances to make the billboard gui and the textlabel
+
+
+
+	gui.Name = "Cracked esp"; ---- properties of the esp
+	gui.ResetOnSpawn = false
+	gui.AlwaysOnTop = true;
+	gui.LightInfluence = 0;
+	gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+	esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	esp.Text = ""
+	esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+	esp.BorderSizePixel = 4;
+	esp.BorderColor3 = Color3.new(esp_settings.colour)
+	esp.BorderSizePixel = 0
+	esp.Font = "GothamSemibold"
+	esp.TextSize = esp_settings.textsize
+	esp.TextColor3 = Color3.fromRGB(esp_settings.colour) -- text colour
+
+	game:GetService("RunService").RenderStepped:Connect(function() ---- loops faster than a while loop :)
+		for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+			if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil and v.TeamColor ~= game:GetService("Players").LocalPlayer.TeamColor then -- craeting checks for team check, local player etc
+				esp.Text = "{"..v.Name.."}"
+				gui:Clone().Parent = v.Character.Head
+			end
+		end
+	end)
+end)
 end)
 
 
